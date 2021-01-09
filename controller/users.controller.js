@@ -6,9 +6,9 @@ const {check,validationResult}=require('express-validator/check');
 const userBodySchema=[
     check('email','email is mandatory').not().isEmpty().isEmail(),
     check('password','password is mandatory').not().isEmpty().isLength({min: 5}),
-    check('firstName','Choose a weekday').not().isEmpty().isLength({min: 3}),
-    check('lastName','Choose a weekday').not().isEmpty().isLength({min: 3}),
-    check('organizationName','Choose a weekday').not().isEmpty().isLength({min: 3}),
+    check('firstName',"First name is mandatory").not().isEmpty().isLength({min: 3}),
+    check('lastName','last name is mandator').not().isEmpty().isLength({min: 3}),
+    check('organizationName','Organization name is mandator').not().isEmpty().isLength({min: 3}),
 ]
 
 // routes
