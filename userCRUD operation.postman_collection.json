@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "33b2afdc-86f9-4782-adf3-d1a2b49a90f5",
+		"name": "userCRUD operation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3300/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"a@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"firstName\":\"aaaa\",\r\n    \"lastName\":\"aaa\",\r\n    \"organizationName\":\"abc\",\r\n    \"dfsf\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3300/users",
+				"description": "Add user "
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3300/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"d@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3300/users/login",
+				"description": "Login User"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3300/users/5ff99ff7aff97841b09e4e8c",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:3300/users/5ff99ff7aff97841b09e4e8c",
+				"description": "Delete user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3300/users/5ff99ff7aff97841b09e4e8c",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"cc@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"firstName\":\"ccccc\",\r\n    \"lastName\":\"cccc\",\r\n    \"organizationName\":\"abc\",\r\n    \"dfsf\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3300/users/5ff9a008aff97841b09e4e8d",
+				"description": "Update user based on id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3300/users/getAll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"limit\": 5,\r\n    \"page\": 1,\r\n    \"sort\": {\r\n        \"_id\": 1\r\n    },\r\n    \"search\": \"d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3300/users/getAll",
+				"description": "Get all user with all filter like \r\npage, limit,sort, search\r\n\r\nall are optional"
+			},
+			"response": []
+		}
+	]
+}
