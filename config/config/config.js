@@ -1,12 +1,12 @@
-module.exports= {
-    db:{
-        url:"mongodb://localhost:27017/test"
+module.exports={
+    db: {
+        url: process.env.mongodbUrl||"mongodb://localhost:27017/test"
     },
-    app:{
-        port:3300,
+    app: {
+        port: process.env.PORT||3300,
     },
-    jwtToken:{
-        secretKey:"testKey",
-        expiresIn:"1d"
+    jwtToken: {
+        secretKey: process.env.jwtSecretKey||"testKey",
+        expiresIn: process.env.jwtExpiryTime||"1d"
     }
 }
