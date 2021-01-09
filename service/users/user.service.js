@@ -73,7 +73,7 @@ async function create(userParam) {
     }
 
     // save user
-    await user.save();
+    return await user.save();
 }
 
 async function update(id,userParam) {
@@ -94,9 +94,9 @@ async function update(id,userParam) {
     }
     Object.assign(user,userParam);
 
-    await user.save();
+    return await user.save();
 }
 
 async function _delete(id) {
-    await User.findByIdAndRemove(id);
+    return await User.findByIdAndRemove(id);
 }

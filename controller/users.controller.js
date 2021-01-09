@@ -40,7 +40,7 @@ function register(req,res,next) {
         return res.status(422).jsonp(errors.array());
     } else {
         userService.create(req.body)
-            .then(() => res.json({}))
+            .then((resutl) => res.json(resutl))
             .catch(err => next(err));
     }
 }
@@ -53,7 +53,7 @@ function getAll(req,res,next) {
 
 function getById(req,res,next) {
     userService.getById(req.params.id)
-        .then(user => user? res.json(user):res.sendStatus(404))
+        .then(user => user? res.json(user):res.json({message:"No recor found"}).sendStatus(404))
         .catch(err => next(err));
 }
 
@@ -63,13 +63,13 @@ function update(req,res,next) {
         return res.status(422).jsonp(errors.array());
     } else {
         userService.update(req.params.id,req.body)
-            .then(() => res.json({}))
+            .then((result) => res.json(result))
             .catch(err => next(err));
     }
 }
 
 function _delete(req,res,next) {
     userService.delete(req.params.id)
-        .then(() => res.json({}))
+        .then((result) => res.json(result))
         .catch(err => next(err));
 }
